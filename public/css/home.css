@@ -1,0 +1,316 @@
+.suggestions-box {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    display: none;
+    /* Ẩn mặc định */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+#search-input,
+#search-button {
+    display: none;
+    /* Ẩn mặc định */
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.search-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.suggestions-box {
+    color: black;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f1f1f1;
+}
+
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.comic-card {
+    transition: transform 0.2s;
+}
+
+.comic-card:hover {
+    transform: scale(1.05);
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.filter-section h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.list-group-item {
+    border: 1px solid rgba(0, 0, 0, .125);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.list-group-item.active {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.list-group-item:hover:not(.active) {
+    background-color: #f8f9fa;
+}
+
+.stats-section {
+padding: 60px 0;
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+margin: 40px 0;
+position: relative;
+overflow: hidden;
+}
+
+.stats-section::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url('public/patterns/comic-pattern.png') repeat;
+opacity: 0.05;
+z-index: 0;
+}
+
+.stat-card {
+background: white;
+border-radius: 12px;
+padding: 30px 20px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+position: relative;
+z-index: 1;
+height: 100%;
+border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.stat-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+font-size: 2.5rem;
+color: #343a40;
+margin-bottom: 15px;
+transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+transform: scale(1.1);
+color: #dc3545;
+}
+
+.stat-number {
+font-size: 2.2rem;
+font-weight: 700;
+color: #dc3545;
+margin-bottom: 10px;
+font-family: 'Arial Black', sans-serif;
+}
+
+.stat-title {
+font-size: 1.1rem;
+color: #6c757d;
+font-weight: 500;
+}
+
+/* Hiệu ứng animation */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.stat-card {
+animation: fadeInUp 0.6s ease forwards;
+opacity: 0;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.3s; }
+.stat-card:nth-child(3) { animation-delay: 0.5s; }
+
+
+
+/* Khung gợi ý */
+.suggestions-box {
+    position: absolute;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Mỗi mục gợi ý */
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Nội dung gợi ý */
+.suggestion-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hình ảnh */
+.suggestion-image {
+    width: 50px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.suggestion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Thông tin */
+.suggestion-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.suggestion-title {
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.suggestion-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.suggestion-price {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Thanh cuộn */
+.suggestions-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.suggestions-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 8px 8px 0;
+}
+
+.suggestions-box::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.suggestions-box::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* Thanh tìm kiếm */
+.search-container {
+    position: relative;
+    margin: 0 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 1.1rem;
+    color: #6c757d;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

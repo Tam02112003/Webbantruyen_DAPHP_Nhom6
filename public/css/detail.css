@@ -1,0 +1,291 @@
+/* CSS cho trang chi tiết */
+.comic-detail-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.comic-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.comic-breadcrumb .breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+.comic-breadcrumb .breadcrumb-item a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.comic-breadcrumb .breadcrumb-item a:hover {
+    color: #dc3545;
+}
+
+.comic-breadcrumb .breadcrumb-item.active {
+    color: #495057;
+}
+
+.comic-detail-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.comic-detail-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.comic-image-container {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.comic-main-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comic-main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.comic-main-image:hover img {
+    transform: scale(1.02);
+}
+
+.comic-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.comic-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.comic-title {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.comic-meta {
+    margin-bottom: 20px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #6c757d;
+}
+
+.meta-item i {
+    width: 20px;
+    color: #dc3545;
+    margin-right: 10px;
+}
+
+.comic-price {
+    font-size: 1.8rem;
+    color: #dc3545;
+    font-weight: 700;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+
+.discount-badge {
+    background: #28a745;
+    color: white;
+    font-size: 0.9rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.comic-description {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.comic-description h3 {
+    font-size: 1.2rem;
+    color: #343a40;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.comic-description h3 i {
+    margin-right: 10px;
+    color: #dc3545;
+}
+
+.comic-description p {
+    line-height: 1.6;
+    color: #495057;
+}
+
+.add-to-cart-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    background: #f8f9fa;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #e9ecef;
+}
+
+.quantity-input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+   
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.add-to-cart-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-to-cart-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(220, 53, 69, 0.2);
+}
+
+.comic-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.back-btn, .view-cart-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn {
+    background: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+.back-btn:hover {
+    background: #e9ecef;
+    color: #212529;
+}
+
+.view-cart-btn {
+    background: #343a40;
+    color: white;
+}
+
+.view-cart-btn:hover {
+    background: #212529;
+    color: white;
+}
+
+.comic-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.not-found-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.not-found-content i {
+    font-size: 4rem;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+.not-found-content h2 {
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.not-found-content p {
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .comic-detail-content {
+        flex-direction: column;
+    }
+    
+    .comic-title {
+        font-size: 1.5rem;
+    }
+    
+    .comic-price {
+        font-size: 1.5rem;
+    }
+}
