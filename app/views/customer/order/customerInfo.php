@@ -108,7 +108,7 @@
             <i class="bi bi-arrow-left"></i> Quay Lại Giỏ Hàng
         </a>
         <button type="submit" class="btn btn-primary">
-            <i class="bi bi-check-circle"></i> Xác Nhận Thanh Toán
+            <i class="bi bi-check-circle"></i> Xác Nhận Đặt Hàng
         </button>
     </div>
 </form>
