@@ -78,7 +78,13 @@ if (isset($_GET['code'])) {
     ];
 
     $_SESSION['success'] = "Đăng nhập thành công.";
-    header('Location: index.php?controller=home&action=index');
+    // Chuyển hướng dựa trên role
+    if ($user['role'] === 'admin') {
+        header('Location: index.php?controller=admin&action=dashboard');
+    } else {
+        header('Location: index.php?controller=home&action=index');
+    }
+
     exit;
 } else {
     $_SESSION['error'] = "Không có mã xác thực. Vui lòng thử lại.";

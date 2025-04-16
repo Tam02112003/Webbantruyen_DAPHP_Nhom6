@@ -71,19 +71,26 @@ class AuthController {
             exit;
         }
     }
-    public function loginWithGoogle() {
+
+    public function loginWithGoogle()
+    {
         if (isset($_SESSION['user'])) {
-            // Người dùng đã đăng nhập qua Google
-            header('Location: index.php?controller=home&action=index');
-            exit;
+            // Kiểm tra role của người dùng
+            if ($_SESSION['user']['role'] === 'admin') {
+                // Nếu là admin, chuyển đến trang dashboard admin
+                header('Location: index.php?controller=admin&action=dashboard');
+                exit;
+            } else {
+                // Nếu là user thường, chuyển đến trang chủ
+                header('Location: index.php?controller=home&action=index');
+                exit;
+            }
         } else {
             // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập Google
             header('Location: login_with_google.php');
             exit;
         }
     }
-
-
 
 
     public function handleGoogleLogin($userInfo) {
@@ -165,20 +172,25 @@ class AuthController {
                     'role' => $user['role']
                 ];
                 
-                // Kiểm tra session ngay sau khi lưu
-                if (empty($_SESSION['user']['email'])) {
-                    error_log("Không thể lấy email cho user: " . $username);
-                }
-    
-                $_SESSION['success'] = "Đăng nhập thành công.";
-                header('Location: index.php?controller=home&action=index');
-                exit;
-            } else {
-                $_SESSION['error'] = "Tên người dùng hoặc mật khẩu không đúng.";
-                header('Location: index.php?controller=auth&action=showLoginForm');
-                exit;
-            }
-        }
+               // Debug để kiểm tra session
+               error_log("Logged in user: " . print_r($_SESSION['user'], true));
+
+               // Kiểm tra role để quyết định redirect
+               if ($_SESSION['user']['role'] === 'admin') {
+                   $_SESSION['success'] = "Đăng nhập thành công với vai trò admin.";
+                   header('Location: index.php?controller=admin&action=index');
+                   exit;
+               } else {
+                   $_SESSION['success'] = "Đăng nhập thành công.";
+                   header('Location: index.php?controller=home&action=index');
+                   exit;
+               }
+           } else {
+               $_SESSION['error'] = "Tên người dùng hoặc mật khẩu không đúng.";
+               header('Location: index.php?controller=auth&action=showLoginForm');
+               exit;
+           }
+       }
     }
     
     // Xử lý đăng xuất
